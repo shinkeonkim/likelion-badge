@@ -6,7 +6,7 @@ def likelion_shield_badge(request):
   generation = request.GET.get('generation') or 9
 
   svg = '''
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.63 8.1">
+    <svg height="20" width="110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 8.1">
       <defs>
         <style>
           .cls-1 {{
@@ -24,19 +24,18 @@ def likelion_shield_badge(request):
       </defs>
       <g id="레이어_2" data-name="레이어 2">
         <g id="레이어_1-2" data-name="레이어 1">
-          <rect class="cls-1" width="39.63" height="8.1" rx="1.44"/>
-          <text class="cls-2" transform="translate(1.43 5.86)">
+          <rect class="cls-1" width="41" height="8.1" rx="1.44"/>
+          <text class="cls-2" transform="translate(1.52 5.86)">
             LikeLion
           </text>
-          <rect class="cls-3" x="24.96" y="1" width="0.19" height="5.79"/>
-          <text class="cls-2" transform="translate({number_text_x_position} 5.92)">
+          <rect class="cls-3" x="26.2" y="1.55" width="0.3" height="5.0"/>
+          <text class="cls-2" text-anchor="middle" transform="translate(33 5.92)">
             {generation_ordinal_number}
           </text>
         </g>
       </g>
     </svg>'''.format(
       generation_ordinal_number=ordinal_number(generation),
-      number_text_x_position=('27.94' if int(generation) < 10 else '25.94')
     )
 
   response = HttpResponse(content=svg)
