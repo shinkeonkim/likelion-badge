@@ -1,4 +1,4 @@
-# Likelion
+# LikelionBadge Project
 
 [Mazassumnida 프로젝트](https://github.com/mazassumnida/mazassumnida)에서 영감을 받았습니다.
 
