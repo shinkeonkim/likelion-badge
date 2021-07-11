@@ -6,11 +6,15 @@
 
 ## shield badge 
 
-![9th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge)
-
-![8th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=8)
-
+![1st](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=1)
+![2nd](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=2)
+![3rd](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=3)
+![4th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=4)
+![5th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=5)
+![6th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=6)
 ![7th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=7)
+![8th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge?generation=8)
+![9th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge)
 
 사용방법:
 ```
