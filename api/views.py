@@ -64,7 +64,7 @@ def likelion_university_badge_v1(request):
   university = request.GET.get('university')
 
   svg= '''
-    <svg height="200" width="1100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 479.85 132.62">
+    <svg height="200" width="723.646" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 479.85 132.62">
       <defs>
         <style>
           <![CDATA[
