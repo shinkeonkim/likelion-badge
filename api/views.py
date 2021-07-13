@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .utils import ordinal_number
+from .utils import ordinal_number, styled_container
+
 
 def likelion_shield_badge(request):
   generation = request.GET.get('generation') or 9
+  style = request.GET.get('style') or 'rounded'
 
   svg = '''
   <svg height="20" width="110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.37 20">
@@ -33,9 +35,8 @@ def likelion_shield_badge(request):
         <g id="레이어_2-2" data-name="레이어 2">
           <g id="레이어_1-2-2" data-name="레이어 1-2">
             <g id="레이어_1-2-2-2" data-name="레이어 1-2-2">
-              <path class="cls-1" d="M3.63,0H99.74a3.59,3.59,0,0,1,3.63,3.55h0V16.44A3.59,3.59,0,0,1,99.75,20H3.63A3.6,3.6,0,0,1,0,16.44V3.56A3.6,3.6,0,0,1,3.63,0Z"/>
-              <path class="cls-2" d="M67.3,0H99.74a3.59,3.59,0,0,1,3.63,3.55h0V16.44A3.59,3.59,0,0,1,99.75,20H67.3"/>
-              <text class="cls-3" text-anchor="middle" transform="translate(84.79 14.35)">
+              {styled_container}
+               <text class="cls-3" text-anchor="middle" transform="translate(84.79 14.35)">
                 {generation_ordinal_number}
               </text>
             </g>
@@ -51,19 +52,21 @@ def likelion_shield_badge(request):
       </g>
     </g>
   </svg>'''.format(
+      styled_container=styled_container(style),
       generation_ordinal_number=ordinal_number(generation),
-    )
+  )
 
   response = HttpResponse(content=svg)
   response['Content-Type'] = 'image/svg+xml'
   response['Cache-Control'] = 'no-cache'
   return response
 
+
 def likelion_university_badge_v1(request):
   generation = request.GET.get('generation') or 9
   university = request.GET.get('university')
 
-  svg= '''
+  svg = '''
     <svg height="200" width="723.646" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 479.85 132.62">
       <defs>
         <style>
@@ -139,9 +142,9 @@ def likelion_university_badge_v1(request):
       </g>
     </svg>
   '''.format(
-    generation_ordinal_number=ordinal_number(generation),
-    university = university or "",
-    university_seperator = 'X' if university else '' 
+      generation_ordinal_number=ordinal_number(generation),
+      university=university or "",
+      university_seperator='X' if university else ''
   )
   response = HttpResponse(content=svg)
   response['Content-Type'] = 'image/svg+xml'
