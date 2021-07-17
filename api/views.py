@@ -4,10 +4,10 @@ from .utils import ordinal_number, styled_container
 
 
 def likelion_shield_badge(request):
-  generation = request.GET.get('generation') or 9
-  style = request.GET.get('style') or 'rounded'
+    generation = request.GET.get('generation') or 9
+    style = request.GET.get('style') or 'rounded'
 
-  svg = '''
+    svg = '''
   <svg height="20" width="110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.37 20">
     <defs>
       <style>
@@ -52,21 +52,21 @@ def likelion_shield_badge(request):
       </g>
     </g>
   </svg>'''.format(
-      styled_container=styled_container(style),
-      generation_ordinal_number=ordinal_number(generation),
-  )
+        styled_container=styled_container(style),
+        generation_ordinal_number=ordinal_number(generation),
+    )
 
-  response = HttpResponse(content=svg)
-  response['Content-Type'] = 'image/svg+xml'
-  response['Cache-Control'] = 'no-cache'
-  return response
+    response = HttpResponse(content=svg)
+    response['Content-Type'] = 'image/svg+xml'
+    response['Cache-Control'] = 'no-cache'
+    return response
 
 
 def likelion_university_badge_v1(request):
-  generation = request.GET.get('generation') or 9
-  university = request.GET.get('university')
+    generation = request.GET.get('generation') or 9
+    university = request.GET.get('university')
 
-  svg = '''
+    svg = '''
     <svg height="200" width="723.646" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 479.85 132.62">
       <defs>
         <style>
@@ -142,11 +142,11 @@ def likelion_university_badge_v1(request):
       </g>
     </svg>
   '''.format(
-      generation_ordinal_number=ordinal_number(generation),
-      university=university or "",
-      university_seperator='X' if university else ''
-  )
-  response = HttpResponse(content=svg)
-  response['Content-Type'] = 'image/svg+xml'
-  response['Cache-Control'] = 'no-cache'
-  return response
+        generation_ordinal_number=ordinal_number(generation),
+        university=university or "",
+        university_seperator='X' if university else ''
+    )
+    response = HttpResponse(content=svg)
+    response['Content-Type'] = 'image/svg+xml'
+    response['Cache-Control'] = 'no-cache'
+    return response

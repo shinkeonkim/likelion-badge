@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "python.linting.pylintArgs": [
+      "--indent-string='    '"
+  ],
+  "python.formatting.autopep8Args": [
+      "--indent-size=4"
+  ],
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "autopep8"
+}
